@@ -1,0 +1,278 @@
+$bg: #060c1a;
+$alt-bg: #0b172f;
+$alt2-bg: #0e1e3d;
+$fg: #e7edf8cc;
+$red: #ee3844;
+$blue: #3a76ee;
+
+@font-face {
+  font-family: 'Permanent Marker';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Permanent Marker Regular'), local('PermanentMarker-Regular'), url(public/fonts/marker.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, main, app {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+body {
+  background-color: #f8f9fb;
+  background-image: radial-gradient(circle, #e2e2e2 1px, rgba(0, 0, 0, 0) 1px);
+  // background-image: linear-gradient(to right, #e2e2e2 1px, transparent 1px), linear-gradient(to bottom, #e2e2e2 1px, transparent 1px);
+  background-size: 10px 10px;
+  color: #11100e;
+  color: #e2e2e2;
+  font-size: 13px;
+  font-family: Permanent Marker;
+  margin: 0;
+}
+
+main {
+  display: flex
+}
+
+// h1, h2, h3 {
+//   margin: 0;
+// }
+
+// img {
+//   max-width: 100%;
+//   max-height: 100%;
+// }
+
+// a {
+//   text-decoration: none;
+//   color: $blue;
+//   cursor: pointer;
+// }
+
+// p {
+//   margin: 0;
+// }
+
+// pre {
+//   font-family: SourceCode, monospace;
+//   margin: 0;
+//   display: block;
+// }
+
+// code {
+//   font-family: SourceCode, monospace;
+//   margin: 0;
+//   display: block;
+//   margin: 0 10px;
+// }
+
+// div[contenteditable=true] {
+//   white-space: pre-wrap;
+//   overflow: hidden;
+//   outline: none;
+//   a {
+//     cursor: unset;
+//   }
+// }
+
+// input, textarea {
+//   font: inherit;
+//   color: inherit;
+//   outline: none;
+// }
+
+// ul {
+//   list-style: none;
+//   padding: 0;
+//   margin: 0;
+// }
+
+// fieldset {
+//   border: none;
+// }
+
+// legend {
+//   margin-left: -10px;
+//   font-weight: bold;
+// }
+
+// ::selection {
+//   background: $blue;
+// }
+
+
+// /*** SCROLLBAR ***/
+
+// .scrolls {
+//   position: relative;
+//   overflow: hidden;
+// }
+
+// .scroll-wrapper {
+//   position: relative;
+//   overflow-y: scroll;
+//   height: 100%;
+//   &.padded {
+//     padding: 10px;
+//   }
+// }
+
+// .scroll-bar {
+//   position: absolute;
+//   height: 100%;
+//   top: 0;
+//   right: 0;
+//   width: 8px;
+//   background-color: $alt2-bg;
+//   opacity: 0;
+//   z-index: 2;
+//   pointer-events: none;
+//   transition: 0.3s opacity;
+// }
+
+// .scrolls:hover > .scroll-bar {
+//   opacity: 1;
+// }
+
+// .scroll-handle {
+//   position: absolute;
+//   background-color: $red;
+//   width: 100%;
+//   top: 0;
+//   transform: translateY(0);
+//   pointer-events: all;
+// }
+
+// .scroll-wrapper.resizable {
+//   overflow: hidden;
+// }
+
+// /*** Markdown ***/
+
+// .spoiler {
+//   background-color: $fg;
+//   color: hsla(0, 0%, 100%, 0);
+//   &:hover {
+//     color: $bg;
+//   }
+// }
+
+// .underline {
+//   text-decoration: underline;
+// }
+
+// .heading {
+//   font-size: 1.2em;
+//   color: $red;
+// }
+
+// .inline-code {
+//   display: inline;
+//   margin: 0 2px;
+// }
+
+// blockquote {
+//   margin: 0;
+//   color: #3aee3a;
+// }
+
+// /*** TOOLTIPS ***/
+
+// [tooltip] {
+//   position: relative;
+//   &::before {
+//     content: "";
+//     position: absolute;
+//     border-width: 4px 6px 0 6px;
+//     border-style: solid;
+//     border-color: #3a76ee transparent transparent     transparent;
+//     z-index: 2;
+//     opacity: 0;
+//     transition: 0.2s;
+//   }
+// }
+
+// .t-left::before {
+//   left: 0%;
+//   top: 50%;
+//   margin-left: -12px;
+//   transform: translateY(-50%) rotate(-90deg);
+// }
+
+// .t-bottom::before {
+//   top: 100%;
+//   left: 50%;
+//   margin-top: 8px;
+//   transform: translateX(-50%) translateY(-100%) rotate(-180deg);
+// }
+
+// .t-right::before {
+//   left: 100%;
+//   top: 50%;
+//   margin-left: 1px;
+//   transform: translateY(-50%) rotate(90deg);
+// }
+
+// .t-top::before {
+//   top: -6px;
+//   left: 50%;
+//   transform: translateX(-50%);
+// }
+
+// [tooltip]::after {
+//   content: attr(tooltip);
+//   color: $fg;
+//   font-weight: normal;
+//   position: absolute;
+//   text-align: center;
+//   min-width: 80px;
+//   pointer-events: none;
+//   z-index: 2;
+//   opacity: 0;
+//   padding: 5px;
+//   background-color: #3a76ee;
+//   transition: .2s;
+// }
+
+// .t-left::after {
+//   left: 0%;
+//   top: 50%;
+//   margin-left: -8px;
+//   transform: translateX(-100%) translateY(-50%);
+// }
+
+// .t-bottom::after {
+//   top: 100%;
+//   left: 50%;
+//   margin-top: 8px;
+//   transform: translateX(-50%) translateY(0%);
+// }
+
+// .t-right::after {
+//   left: 100%;
+//   top: 50%;
+//   margin-left: 8px;
+//   transform: translateX(0%) translateY(-50%);
+// }
+
+// .t-top::after {
+//   top: -6px;
+//   left: 50%;
+//   transform: translateX(-50%) translateY(-100%);
+// }
+
+// .t-right.t-top:after {
+//   transform: translateX(-90%) translateY(-100%);
+// }
+
+// [tooltip]:hover {
+//   &::after, &::before {
+//     transition-delay: 0.5s;
+//     opacity: 1;
+//   }
+// }

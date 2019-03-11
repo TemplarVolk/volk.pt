@@ -1,0 +1,21 @@
+name: volkpt
+
+environment:
+  sdk: ">=2.1.0-dev.5.0 <3.0.0"
+
+dependencies:
+  # No strict dependencies, we always use dependency_overrides.
+  angular:
+  angular_router:
+  vector2:
+      git: git://github.com/TemplarVolk/vector2.git
+
+dev_dependencies:
+  # No strict dependencies, we always use dependency_overrides.
+  angular_test:
+  build_runner: ^1.0.0
+  build_test: ^0.10.2+5
+  build_web_compilers: ^0.4.0+4
+  pageloader: ^3.0.0-beta
+  sass_builder: ^2.1.2
+  test: ^1.3.0
