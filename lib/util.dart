@@ -30,8 +30,6 @@ class ParticleImage {
   CanvasElement canvas;
   CanvasRenderingContext2D ctx;
   Vector2 mouse;
-  Vector2 userMouse;
-  Vector2 center;
   bool hover;
   int step = 3;
   int threshold = 150;
@@ -78,8 +76,8 @@ class ParticleImage {
 
   void mouseHandler(e) {
     this.hover = e.type == 'mousemove';
-    this.userMouse.x = e.client.x;
-    this.userMouse.y = e.client.y;
+    this.mouse.x = e.client.x;
+    this.mouse.y = e.client.y;
   }
 
   void createGrid() {
@@ -105,7 +103,6 @@ class ParticleImage {
   void draw() {
     if (!hover) this.threshold = 0;
     else this.threshold = 150;
-    this.mouse = userMouse;
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
     for (var i = 0, len = points.length; i < len; i++) {
       Point p = this.points[i];
@@ -161,9 +158,7 @@ class ParticleImage {
     this.canvas.width = window.innerWidth;
     this.canvas.height = window.innerHeight;
 
-    this.center = new Vector2(this.canvas.width / 2, this.canvas.height / 2);
-    this.mouse = new Vector2(this.center.x, this.center.y);
-    this.userMouse = new Vector2(this.center.x, this.center.y);
+    this.mouse = new Vector2(0, 0);
 
     this.createGrid();
   }
