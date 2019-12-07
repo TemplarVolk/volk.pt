@@ -116,7 +116,6 @@ class ParticleImage {
 
       if (p.position.y - p.size < 0) {
         p.position.y = p.size.toDouble();
-        print(p.position.y);
       } else if (p.position.y + p.size / 2 > window.innerHeight) {
         p.position.y = window.innerHeight - p.size / 2;
       }
